@@ -1,10 +1,13 @@
 package application;
 
+import boardgame.Positition;
+
 public class Program {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("WHAT TIME IS IT? ADVETURE TIME!");
+		
+		Positition pos = new Positition(7, 3);
+		System.out.println(pos);
 	}
 
 }
