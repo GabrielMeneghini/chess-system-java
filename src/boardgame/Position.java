@@ -1,13 +1,13 @@
 package boardgame;
 
-public class Positition {
+public class Position {
 
 	// Attributes
 	private int row;
 	private int column;
 	
 	// Constructors
-	public Positition(int row, int column) {
+	public Position(int row, int column) {
 		this.row = row;
 		this.column = column;
 	}
