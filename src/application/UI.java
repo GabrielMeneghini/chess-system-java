@@ -113,9 +113,7 @@ public class UI {
 		System.out.printf("White:");
 		System.out.println(ANSI_WHITE + Arrays.toString(white.toArray()) + ANSI_RESET);
 		System.out.printf("Black:");
-		System.out.println(ANSI_YELLOW + Arrays.toString(black.toArray()) + ANSI_RESET);
-
-		
+		System.out.println(ANSI_YELLOW + Arrays.toString(black.toArray()) + ANSI_RESET);	
 	}
 	
 	
