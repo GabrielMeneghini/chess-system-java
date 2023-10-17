@@ -11,6 +11,7 @@ import chess.pieces.Bishop;
 import chess.pieces.King;
 import chess.pieces.Knight;
 import chess.pieces.Pawn;
+import chess.pieces.Queen;
 import chess.pieces.Rook;
 
 public class ChessMatch {
@@ -94,11 +95,13 @@ public class ChessMatch {
 		ChessPiece p = (ChessPiece)board.removePiece(source);
 		p.increaseMoveCount();
 		Piece capturedPiece = board.removePiece(target);
+		board.placePiece(p, target);
+		
 		if(capturedPiece != null) {
 			piecesOnTheBoard.remove(capturedPiece);
 			capturedPieces.add(capturedPiece);
 		}
-		board.placePiece(p, target);
+		
 		return capturedPiece;
 	}
 	
@@ -106,7 +109,9 @@ public class ChessMatch {
 		ChessPiece p = (ChessPiece)board.removePiece(target);
 		p.decreaseMoveCount();
 		board.placePiece(p, source);
+		
 		if(capturedPiece != null) {
+			board.placePiece(capturedPiece, target);
 			capturedPieces.remove(capturedPiece);
 			piecesOnTheBoard.add(capturedPiece);
 		}
@@ -199,6 +204,7 @@ public class ChessMatch {
 		placeNewPiece('c', 1, new Bishop(board, Color.WHITE));
 		placeNewPiece('f', 1, new Bishop(board, Color.WHITE));
 		placeNewPiece('e', 1, new King(board, Color.WHITE));
+		placeNewPiece('d', 1, new Queen(board, Color.WHITE));
 		placeNewPiece('a', 2, new Pawn(board, Color.WHITE));
 		placeNewPiece('b', 2, new Pawn(board, Color.WHITE));
 		placeNewPiece('c', 2, new Pawn(board, Color.WHITE));
@@ -214,7 +220,8 @@ public class ChessMatch {
 		placeNewPiece('g', 8, new Knight(board, Color.BLACK));
 		placeNewPiece('c', 8, new Bishop(board, Color.BLACK));
 		placeNewPiece('f', 8, new Bishop(board, Color.BLACK));
-		placeNewPiece('e', 8, new King(board, Color.BLACK));	
+		placeNewPiece('e', 8, new King(board, Color.BLACK));
+		placeNewPiece('d', 8, new Queen(board, Color.BLACK));
 		placeNewPiece('a', 7, new Pawn(board, Color.BLACK));
 		placeNewPiece('b', 7, new Pawn(board, Color.BLACK));
 		placeNewPiece('c', 7, new Pawn(board, Color.BLACK));
