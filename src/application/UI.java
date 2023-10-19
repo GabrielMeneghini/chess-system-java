@@ -95,10 +95,10 @@ public class UI {
 			System.out.print(ANSI_BLUE_BACKGROUND);
 		}
 		if(piece == null) {
-			System.out.print("*" + ANSI_RESET);
+			System.out.print("-" + ANSI_RESET);
 		} else {
 			if(piece.getColor() == Color.WHITE) {
-				System.out.print(ANSI_WHITE + piece + ANSI_RESET);
+				System.out.print(ANSI_CYAN + piece + ANSI_RESET);
 			} else {
 				System.out.print(ANSI_YELLOW + piece + ANSI_RESET);
 			}
@@ -110,10 +110,10 @@ public class UI {
 		List<ChessPiece> white = captured.stream().filter(x -> x.getColor() == Color.WHITE).collect(Collectors.toList());		
 		List<ChessPiece> black = captured.stream().filter(x -> x.getColor() == Color.BLACK).collect(Collectors.toList());
 		System.out.println("Captured pieces");
-		System.out.printf("White:");
-		System.out.println(ANSI_WHITE + Arrays.toString(white.toArray()) + ANSI_RESET);
-		System.out.printf("Black:");
-		System.out.println(ANSI_YELLOW + Arrays.toString(black.toArray()) + ANSI_RESET);	
+		//System.out.print("White:");
+		System.out.println(ANSI_CYAN + "White:" + Arrays.toString(white.toArray()) + ANSI_RESET);
+		//System.out.printf("Black:");
+		System.out.println(ANSI_YELLOW + "Black:" + Arrays.toString(black.toArray()) + ANSI_RESET);	
 	}
 	
 	
