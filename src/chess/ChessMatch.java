@@ -135,9 +135,9 @@ public class ChessMatch {
 	}
 	
 	private ChessPiece newPiece(String type, Color color) {
-		if(type.equals("B") || type.equals("b")) return new Bishop(board, color);
-		if(type.equals("N") || type.equals("n")) return new Knight(board, color);
-		if(type.equals("R") || type.equals("r")) return new Rook(board, color);
+		if(type.equals("B")) return new Bishop(board, color);
+		if(type.equals("N")) return new Knight(board, color);
+		if(type.equals("R")) return new Rook(board, color);
 		return new Queen(board, color);
 	}
 	
@@ -320,7 +320,7 @@ public class ChessMatch {
 		placeNewPiece('d', 1, new Queen(board, Color.WHITE));
 		placeNewPiece('a', 2, new Pawn(board, Color.WHITE, this));
 		placeNewPiece('b', 2, new Pawn(board, Color.WHITE, this));
-		placeNewPiece('c', 7, new Pawn(board, Color.WHITE, this));
+		placeNewPiece('c', 2, new Pawn(board, Color.WHITE, this));
 		placeNewPiece('d', 2, new Pawn(board, Color.WHITE, this));
 		placeNewPiece('e', 2, new Pawn(board, Color.WHITE, this));
 		placeNewPiece('f', 2, new Pawn(board, Color.WHITE, this));
@@ -337,7 +337,7 @@ public class ChessMatch {
 		placeNewPiece('d', 8, new Queen(board, Color.BLACK));
 		placeNewPiece('a', 7, new Pawn(board, Color.BLACK, this));
 		placeNewPiece('b', 7, new Pawn(board, Color.BLACK, this));
-		placeNewPiece('c', 2, new Pawn(board, Color.BLACK, this));
+		placeNewPiece('c', 7, new Pawn(board, Color.BLACK, this));
 		placeNewPiece('d', 7, new Pawn(board, Color.BLACK, this));
 		placeNewPiece('e', 7, new Pawn(board, Color.BLACK, this));
 		placeNewPiece('f', 7, new Pawn(board, Color.BLACK, this));
